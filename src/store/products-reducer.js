@@ -1,7 +1,7 @@
 // The Products Reducer.
 
 //Each product should have a category association, name, description, price, inventory count.
-let initialState = {
+const initialState = {
   products: [
     { category: 'pickaxes', name: 'wooden pickax', description: 'Minecraft Wooden Pickax', price: 'Two Sticks', inventoryCount: 5 },
     { category: 'pickaxes', name: 'stone pickax', description: 'Minecraft Stone Pickax', price: 'Two Rocks', inventoryCount: 3 },
