@@ -1,9 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { categorySelection } from '../store/categories-reducer';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Link from '@material-ui/core/Link';
+
+import { connect } from 'react-redux';
+import { categorySelection } from '../store/categories-reducer';
 
 
 const mapDispatchToProps = { categorySelection };

@@ -1,6 +1,6 @@
 // The Categories Reducer.
 
-let initialState = {
+const initialState = {
   categories: [
     { name: 'pickaxes', display: 'Pickaxes', description: 'Minecraft Pickaxes' },
     { name: 'swords', display: 'Swords', description: 'Minecraft Swords' },
