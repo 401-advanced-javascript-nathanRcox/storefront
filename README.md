@@ -35,32 +35,32 @@ Aplication Architecture:
 - [x] Begin with creating your application using create-react-app.
 - [x] Install Material UI as a dependency.
 - [x] Write an App component that serves as the container for all sub-components of this application.
-- [ ] A <Header> component which shows the name of your virtual store.
-- [ ] A <Footer> component which shows your copyright and contact information.
-- [ ] A <Categories> component.
-  - [ ] Shows a list of all categories.
-  - [ ] Dispatches an action when one is clicked to “activate” it.
-- [ ] A <Products> component that displays a list of products associated with the selected category.
+- [x] A <Header> component which shows the name of your virtual store.
+- [x] A <Footer> component which shows your copyright and contact information.
+- A <Categories> component.
+  - [x] Shows a list of all categories.
+  - [x] Dispatches an action when one is clicked to “activate” it.
+- [x] A <Products> component that displays a list of products associated with the selected category.
 
 ---
 
 The Redux Store:
 
 - Categories
-  - [ ] State should contain a list of categories as well as the active category.
-  - [ ] Each category should have a normalized name, display name, and a description.
-  - [ ] Create an action that will trigger the reducer to change the active category.
-  - [ ] Update the active category in the reducer when this action is dispatched.
+  - [x] State should contain a list of categories as well as the active category.
+  - [x] Each category should have a normalized name, display name, and a description.
+  - [x] Create an action that will trigger the reducer to change the active category.
+  - [x] Update the active category in the reducer when this action is dispatched.
 
 - Products
-  - [ ] State should be a list of all products.
-  - [ ] Each product should have a category association, name, description, price, inventory count.
-  - [ ] Create an action that will trigger when the active category is changed. HINT: Multiple reducers can respond to the same actions.
-  - [ ] Create a reducer that will filter the products list based on the active category.
+  - [x] State should be a list of all products.
+  - [x] Each product should have a category association, name, description, price, inventory count.
+  - [x] Create an action that will trigger when the active category is changed. HINT: Multiple reducers can respond to the same actions.
+  - [x] Create a reducer that will filter the products list based on the active category.
   
-- [ ] Active Category
-  - [ ] State should store active category.
-  - [ ] Other components (products, etc) might need to reference this.
+- Active Category
+  - [x] State should store active category.
+  - [x] Other components (products, etc) might need to reference this.
 
 #### Phase 2
 
