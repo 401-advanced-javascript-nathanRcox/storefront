@@ -66,16 +66,16 @@ The Redux Store:
 
 #### User & Developer Stories
 
-- [ ] As a user, I want to choose from products in the list and add them to my shopping cart.
-- [ ] As a user, I want to see the products that I've added to my shopping cart.
+- [x] As a user, I want to choose from products in the list and add them to my shopping cart.
+- [x] As a user, I want to see the products that I've added to my shopping cart.
 - [ ] As a user, I want to change the quantity of items I intend to purchase in my shopping cart.
 - [ ] As a user, I want to be able to remove an item from my shopping cart.
 
 ---
 
 - [ ] Continue to use Material UI Components for layout and styling.
-- [ ] Add a "Cart" indicator with a counter to the header, like this: **Cart (0)**.
-- [ ] Create a new Cart component to show the items in the user's cart.
+- [x] Add a "Cart" indicator with a counter to the header, like this: **Cart (0)**.
+- [x] Create a new Cart component to show the items in the user's cart.
 
 #### Application Flow
 
@@ -90,30 +90,30 @@ The Redux Store:
 ### Application Architecture
 
 - Add a new component to the page: `<SimpleCart />`
-  - Displays a short list (title only) of products in the cart
-  - This should be present at all times
+  - [ ] Displays a short list (title only) of products in the cart
+  - [ ] This should be present at all times
 - Home Page Operation:
   - When the user selects (clicks on) a category ...
-    - Identify that category as selected
-    - Show a list of products associated with the category, that have a quantity > 0
-    - Add an "add to cart" button to each product
-  - When a user clicks the "add to cart" button add the item to their cart
-    - In the `<SimpleCart/>` component, show a running list of the items in the cart (just the titles)
-    - Change the `(0)` indicator in the header to show the actual number of items in the cart
-    - Reduce the number in stock for that product
+    - [ ] Identify that category as selected.
+    - [ ] Show a list of products associated with the category, that have a quantity > 0.
+    - [x]Add an "add to cart" button to each product
+  - [x] When a user clicks the "add to cart" button add the item to their cart
+  - In the `<SimpleCart/>` component, show a running list of the items in the cart (just the titles)
+  - [x] Change the `(0)` indicator in the header to show the actual number of items in the cart
+  - [x] Reduce the number in stock for that product
 
 #### Redux State Management
 
 Products
 
-- [ ] Create an action that will trigger the reducer to reduce the stock counter.
-- [ ] Create a reducer that reduces the # in stock when that action is dispatched.
+- [x] Create an action that will trigger the reducer to reduce the stock counter.
+- [x] Create a reducer that reduces the # in stock when that action is dispatched.
 
 Cart
 
-- [ ] State should be an array of products that have been added (all product details).
-- [ ] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** this could be the same action type as you create for the Products reducer.
-- [ ] Create a reducer that adds the product to the array of items in state
+- [x] State should be an array of products that have been added (all product details).
+- [x] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** This could be the same action type as you create for the Products reducer.
+- [x] Create a reducer that adds the product to the array of items in state.
 
 #### Phase 3
 
