@@ -112,7 +112,7 @@ Products
 Cart
 
 - [ ] State should be an array of products that have been added (all product details).
-- [ ] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** this could be the same action type as you create for the Products reducer.
+- [ ] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** This could be the same action type as you create for the Products reducer.
 - [ ] Create a reducer that adds the product to the array of items in state
 
 #### Phase 3

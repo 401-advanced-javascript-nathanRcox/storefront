@@ -6,7 +6,6 @@ import Link from '@material-ui/core/Link';
 import { connect } from 'react-redux';
 import { categorySelection } from '../store/categories-reducer';
 
-
 const mapDispatchToProps = { categorySelection };
 
 function SelectCategory(props) {
@@ -25,23 +24,13 @@ function SelectCategory(props) {
             {props.category.categories.map((
               selection, idx) => (
                 <div key={idx}>
-                  <Link component="button" variant="body2" color="inherit" onClick={() => selectedCategory(selection.name)}>
+                  <Link to="/" component="button" variant="body2" color="inherit" onClick={() => selectedCategory(selection.name)}>
                     {selection.description}
                   </Link>
                 </div>
               )
             )}
         </Typography>
-
-        {/* <section id="category-selection">
-          {props.category.categories.map((selection, idx) => (
-            <ul key={idx}>
-              <li>{selection.display}</li>
-              <li>{selection.description}</li>
-            <button onClick={() => selectedCategory(selection.name)}>Select this Category</button>
-            </ul>
-          ))}
-        </section> */}
     </Container>
   )
 }

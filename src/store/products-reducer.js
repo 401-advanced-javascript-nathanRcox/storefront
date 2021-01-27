@@ -1,6 +1,5 @@
 // The Products Reducer.
 
-//Each product should have a category association, name, description, price, inventory count.
 const initialState = {
   products: [
     { category: 'pickaxes', name: 'wooden pickax', description: 'Minecraft Wooden Pickax', price: 'Two Sticks', inventoryCount: 5 },
@@ -19,13 +18,20 @@ export const renderProducts = (category) => {
   return {
     type: 'DISPLAY-PRODUCTS',
     payload: category
-  }
-}
+  };
+};
 
 export const increment = (name) => {
   return {
     type: 'INCREMENT',
     payload: name,
+  };
+};
+
+export const decrement = (item) => {
+  return {
+    type: 'DECREMENT',
+    payload: item.name
   };
 };
 
@@ -35,12 +41,23 @@ const productSelection = (state = initialState, action) => {
     case 'INCREMENT': 
       let products = state.products.map(selection => {
         if (selection.name === payload) {
-          return { name: selection.name, inventoryCount: selection.inventoryCount + 1 }
+          return { ...selection, inventoryCount: selection.inventoryCount + 1 }
         }
         return selection;
       });
 
       return {...state, products};
+
+      case 'DECREMENT':
+        console.log('Payload in Decrement:', payload)
+        let items = state.products.map(item => {
+          if (item.name === payload) {
+            return { ...item, inventoryCount: item.inventoryCount - 1}
+          }
+          return item;
+        });
+
+        return {...state, products: items};
 
       case 'RESET':
         return initialState;
