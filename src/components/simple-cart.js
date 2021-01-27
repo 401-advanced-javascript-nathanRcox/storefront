@@ -1,15 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { changeQuantity } from '../store/cart-reducer';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
-const mapDispatchToProps = { };
+const mapDispatchToProps = { changeQuantity };
 
 function Cart(props) {
   console.log('Props on Cart:', props);
+  
   // Callback functions go here.
+  const updateQuantity = (item) => {
+    props.changeQuantity(item);
+  }
 
   return (
     <Container maxWidth='md'>
@@ -28,6 +33,7 @@ function Cart(props) {
             <Typography>
               Price: {item.price}
             </Typography>
+            <button onClick={()=> updateQuantity(item)}></button>
           </CardContent>
         ))}
       </Card> 

@@ -2,15 +2,15 @@
 
 const initialState = {
   products: [
-    { category: 'pickaxes', name: 'wooden pickax', description: 'Minecraft Wooden Pickax', price: 'Two Sticks', inventoryCount: 5 },
-    { category: 'pickaxes', name: 'stone pickax', description: 'Minecraft Stone Pickax', price: 'Two Rocks', inventoryCount: 3 },
-    { category: 'pickaxes', name: 'diamond pickax', description: 'Minecraft Diamond Pickax', price: 'One Diamond', inventoryCount: 1 },
-    { category: 'swords', name: 'wooden sword', description: 'Minecraft Wooden Sword', price: 'Two Sticks', inventoryCount: 5 },
-    { category: 'swords', name: 'stone sword', description: 'Minecraft Stone Sword', price: 'Two Rocks', inventoryCount: 3 },
-    { category: 'swords', name: 'diamond sword', description: 'Minecraft Diamond Sword', price: 'One Diamond', inventoryCount: 1 },
-    { category: 'helmets', name: 'wooden helmet', description: 'Minecraft Wooden Helmet', price: 'Two Sticks', inventoryCount: 5 },
-    { category: 'helmets', name: 'stone helmet', description: 'Minecraft Stone Helmet', price: 'Two Rocks', inventoryCount: 3 },
-    { category: 'helmets', name: 'diamond helmet', description: 'Minecraft Diamond Helmet', price: 'One Diamond', inventoryCount: 1 },
+    { category: 'pickaxes', name: 'wooden pickax', description: 'Minecraft Wooden Pickax', price: 'Two Sticks', inventoryCount: 5, quantityInCart: 0 },
+    { category: 'pickaxes', name: 'stone pickax', description: 'Minecraft Stone Pickax', price: 'Two Rocks', inventoryCount: 3, quantityInCart: 0 },
+    { category: 'pickaxes', name: 'diamond pickax', description: 'Minecraft Diamond Pickax', price: 'One Diamond', inventoryCount: 1, quantityInCart: 0 },
+    { category: 'swords', name: 'wooden sword', description: 'Minecraft Wooden Sword', price: 'Two Sticks', inventoryCount: 5, quantityInCart: 0 },
+    { category: 'swords', name: 'stone sword', description: 'Minecraft Stone Sword', price: 'Two Rocks', inventoryCount: 3, quantityInCart: 0 },
+    { category: 'swords', name: 'diamond sword', description: 'Minecraft Diamond Sword', price: 'One Diamond', inventoryCount: 1, quantityInCart: 0 },
+    { category: 'helmets', name: 'wooden helmet', description: 'Minecraft Wooden Helmet', price: 'Two Sticks', inventoryCount: 5, quantityInCart: 0 },
+    { category: 'helmets', name: 'stone helmet', description: 'Minecraft Stone Helmet', price: 'Two Rocks', inventoryCount: 3, quantityInCart: 0 },
+    { category: 'helmets', name: 'diamond helmet', description: 'Minecraft Diamond Helmet', price: 'One Diamond', inventoryCount: 1, quantityInCart: 0 },
   ]
 };
 
