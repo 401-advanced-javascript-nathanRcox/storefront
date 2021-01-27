@@ -37,11 +37,10 @@ const cart = (state = initialState, action) => {
       state.cart.forEach(value => {
       if (value.name === payload.name) {
         payload = {...payload, quantityInCart: payload.quantityInCart+1}
-        console.log('Payload in CHANGE-QUANTITY:', payload)
-        console.log('Initial State:', initialState);
+        // console.log('Payload in CHANGE-QUANTITY:', payload)
       }
     })
-    return {...state, cart: [payload]}
+    return {...state, cart: [...state.cart, payload], cartCount: state.cartCount+1};
 
     default:
       return state; 
