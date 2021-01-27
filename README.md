@@ -6,14 +6,14 @@
 
 ### Links and Test Objects
 
-<!-- - [Front-end on GH-Pages](https://401-advanced-javascript-nathanrcox.github.io/to-do/)
-- [Back-end on Heroku](https://nrc-api-server.herokuapp.com/) -->
+- [StoreFrontPorch on GH-Pages](https://401-advanced-javascript-nathanrcox.github.io/storefront/)
+<!-- - [Back-end on Heroku](https://nrc-api-server.herokuapp.com/) -->
 
 ### Resources
 
 ### Setup
 
-#### Phase 1 (lab 36) Application State with Redux: User & Developer Stories
+### Phase 1 (lab 36) Application State with Redux: User & Developer Stories
 
 - [x] As a user, I expect to see a list of available product categories in the store so that I can easily browse products.
 - [x] As a user, I want to choose a category and see a list of all available products matching that category.
@@ -21,7 +21,7 @@
 
 ---
 
-- [ ] Create a visually appealing site using Material UI.
+- [x] Create a visually appealing site using Material UI.
 - [x] Use a Redux Store to manage the state of categories and items in the store.
 - [x] Display a list of categories from state.
 - When the user selects (clicks on) a category:
@@ -35,12 +35,12 @@ Aplication Architecture:
 - [x] Begin with creating your application using create-react-app.
 - [x] Install Material UI as a dependency.
 - [x] Write an App component that serves as the container for all sub-components of this application.
-- [x] A <Header> component which shows the name of your virtual store.
-- [x] A <Footer> component which shows your copyright and contact information.
-- A <Categories> component.
+- [x] A \<Header> component which shows the name of your virtual store.
+- [x] A \<Footer> component which shows your copyright and contact information.
+- A \<Categories> component.
   - [x] Shows a list of all categories.
   - [x] Dispatches an action when one is clicked to “activate” it.
-- [x] A <Products> component that displays a list of products associated with the selected category.
+- [x] A \<Products> component that displays a list of products associated with the selected category.
 
 ---
 
@@ -62,7 +62,58 @@ The Redux Store:
   - [x] State should store active category.
   - [x] Other components (products, etc) might need to reference this.
 
-#### Phase 2
+### Phase 2 (lab 37) Combined Reducers: break up the store into multiple reducers that share functionality and data among components
+
+#### User & Developer Stories
+
+- [ ] As a user, I want to choose from products in the list and add them to my shopping cart.
+- [ ] As a user, I want to see the products that I've added to my shopping cart.
+- [ ] As a user, I want to change the quantity of items I intend to purchase in my shopping cart.
+- [ ] As a user, I want to be able to remove an item from my shopping cart.
+
+---
+
+- [ ] Continue to use Material UI Components for layout and styling.
+- [ ] Add a "Cart" indicator with a counter to the header, like this: **Cart (0)**.
+- [ ] Create a new Cart component to show the items in the user's cart.
+
+#### Application Flow
+
+1. User sees a list of categories.
+  1a. User chooses a category and sees a list of products.
+  1b. User clicks the  "Add to Cart" button on any product.
+2. User clicks the "Cart" link in the header.
+  2a. User sees a list of all products in the cart.
+  2b. User clicks the delete button on an item and sees the item removed.
+  2c. User changes the quantity selector on an item and sees the cart total change.
+
+### Application Architecture
+
+- Add a new component to the page: `<SimpleCart />`
+  - Displays a short list (title only) of products in the cart
+  - This should be present at all times
+- Home Page Operation:
+  - When the user selects (clicks on) a category ...
+    - Identify that category as selected
+    - Show a list of products associated with the category, that have a quantity > 0
+    - Add an "add to cart" button to each product
+  - When a user clicks the "add to cart" button add the item to their cart
+    - In the `<SimpleCart/>` component, show a running list of the items in the cart (just the titles)
+    - Change the `(0)` indicator in the header to show the actual number of items in the cart
+    - Reduce the number in stock for that product
+
+#### Redux State Management
+
+Products
+
+- [ ] Create an action that will trigger the reducer to reduce the stock counter.
+- [ ] Create a reducer that reduces the # in stock when that action is dispatched.
+
+Cart
+
+- [ ] State should be an array of products that have been added (all product details).
+- [ ] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** this could be the same action type as you create for the Products reducer.
+- [ ] Create a reducer that adds the product to the array of items in state
 
 #### Phase 3
 
