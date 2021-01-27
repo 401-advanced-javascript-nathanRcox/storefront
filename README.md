@@ -87,7 +87,7 @@ The Redux Store:
   2b. User clicks the delete button on an item and sees the item removed.
   2c. User changes the quantity selector on an item and sees the cart total change.
 
-### Application Architecture
+#### Application Architecture
 
 - Add a new component to the page: `<SimpleCart />`
   - [ ] Displays a short list (title only) of products in the cart
@@ -115,9 +115,29 @@ Cart
 - [x] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** This could be the same action type as you create for the Products reducer.
 - [x] Create a reducer that adds the product to the array of items in state.
 
-#### Phase 3
+---
 
-#### Phase 4
+### Phase 3 (lab 38): Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
+
+#### User Stories
+
+- [ ] As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.
+- [ ] As a user, I want to know to that, when I add an item to my cart, it is removed from inventory so that no other users can purchase it.
+
+#### Technical Requirements/Notes
+
+- [ ] Continue to use Material UI Components for layout and styling
+- [ ] Load the category and product list from a remote API on page load.
+- [ ] Update the product quantity in stock when adding items to (or removing from) the cart.
+- [ ] Continue to use multiple reducers.
+
+#### Redux State Management
+
+- [ ] You will need to use useEffect() to dispatch a load action on the initial page load.
+  - [ ] This will need to use thunk as it will be asynchronous
+- [ ] When adding/removing/updating items in the cart, the action/reducer will need to update the server.
+- [ ] Perform the appropriate post, put, or delete action via API call (using thunk in an async action) on each of these actions.
+
 
 #### `.env` requirements (where applicable)
 
