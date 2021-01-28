@@ -33,7 +33,7 @@ function Cart(props) {
             <Typography>
               Price: {item.price}
             </Typography>
-            <button onClick={()=> updateQuantity(item)}></button>
+            <button onClick={()=> updateQuantity(item)}>Up this item</button>
           </CardContent>
         ))}
       </Card> 

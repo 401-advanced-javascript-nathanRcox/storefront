@@ -1,20 +1,26 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { get } from '../store/products-reducer';
 
 import AppBar from '@material-ui/core/AppBar';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
+
 // AppBar color options: "default","inherit","primary","secondary","transparent".
 // variant for the cart's link button include: "h1","h2","h3","h4","h5","h6","subtitle1","subtitle2","body1","body2","caption","button","overline","srOnly","inherit"
 
-const mapDispatchToProps = { };
+const mapDispatchToProps = { get };
 
 function Header(props){
 
-  useEffect(() => console.log('Props on header:', props), [props]);
+  const getSomething = async () => {
+  await props.get();
+}
+
+useEffect(() => getSomething(), []);
 
   return(
   <AppBar className="AppBar" color="transparent" position="static">

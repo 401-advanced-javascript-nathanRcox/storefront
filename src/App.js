@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -12,7 +12,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Header />
-          <switch>
+          <Switch>
             <Route exact path="/">
               <Categories />
               <Products />
@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/cart">
               <Cart />
             </Route>
-          </switch>
+          </Switch>
         <Footer />
       </BrowserRouter>
     </div>

@@ -7,7 +7,7 @@
 ### Links and Test Objects
 
 - [StoreFrontPorch on GH-Pages](https://401-advanced-javascript-nathanrcox.github.io/storefront/)
-<!-- - [Back-end on Heroku](https://nrc-api-server.herokuapp.com/) -->
+- [Back-end on Heroku](https://nrc-api-server.herokuapp.com/storefront)
 
 ### Resources
 
@@ -19,16 +19,12 @@
 - [x] As a user, I want to choose a category and see a list of all available products matching that category.
 - [ ] As a user, I want a clean, easy-to-use user interface, so that I can shop the online store with confidence.
 
----
-
 - [x] Create a visually appealing site using Material UI.
 - [x] Use a Redux Store to manage the state of categories and items in the store.
 - [x] Display a list of categories from state.
 - When the user selects (clicks on) a category:
   - [ ] Identify that category as selected (change of class/display).
   - [x] Show a list of products associated with the category.
-
----
 
 Aplication Architecture:
 
@@ -41,8 +37,6 @@ Aplication Architecture:
   - [x] Shows a list of all categories.
   - [x] Dispatches an action when one is clicked to “activate” it.
 - [x] A \<Products> component that displays a list of products associated with the selected category.
-
----
 
 The Redux Store:
 
@@ -62,6 +56,8 @@ The Redux Store:
   - [x] State should store active category.
   - [x] Other components (products, etc) might need to reference this.
 
+---
+
 ### Phase 2 (lab 37) Combined Reducers: break up the store into multiple reducers that share functionality and data among components
 
 #### User & Developer Stories
@@ -70,8 +66,6 @@ The Redux Store:
 - [x] As a user, I want to see the products that I've added to my shopping cart.
 - [ ] As a user, I want to change the quantity of items I intend to purchase in my shopping cart.
 - [ ] As a user, I want to be able to remove an item from my shopping cart.
-
----
 
 - [ ] Continue to use Material UI Components for layout and styling.
 - [x] Add a "Cart" indicator with a counter to the header, like this: **Cart (0)**.
@@ -87,7 +81,7 @@ The Redux Store:
   2b. User clicks the delete button on an item and sees the item removed.
   2c. User changes the quantity selector on an item and sees the cart total change.
 
-### Application Architecture
+#### Application Architecture
 
 - Add a new component to the page: `<SimpleCart />`
   - [ ] Displays a short list (title only) of products in the cart
@@ -102,7 +96,7 @@ The Redux Store:
   - [x] Change the `(0)` indicator in the header to show the actual number of items in the cart
   - [x] Reduce the number in stock for that product
 
-#### Redux State Management
+#### Redux State Management (lab 37)
 
 Products
 
@@ -115,9 +109,28 @@ Cart
 - [x] Create an action that will trigger the reducer to add the selected item to the cart.**Hint:** This could be the same action type as you create for the Products reducer.
 - [x] Create a reducer that adds the product to the array of items in state.
 
-#### Phase 3
+---
 
-#### Phase 4
+### Phase 3 (lab 38): Connect the Virtual Store to an API to retrieve live data from your data source, using thunk to enable asynchronous actions
+
+#### User Stories
+
+- [x] As a user, I want to interact with live inventory so that I have confidence that the displayed products are in stock.
+- [x] As a user, I want to know to that, when I add an item to my cart, it is removed from inventory so that no other users can purchase it.
+
+#### Technical Requirements/Notes
+
+- [ ] Continue to use Material UI Components for layout and styling
+- [x] Load the [category and] product list from a remote API on page load.
+- [x] Update the product quantity in stock when adding items to (or removing from) the cart.
+- [x] Continue to use multiple reducers.
+
+#### Redux State Management (lab 38)
+
+- [x] You will need to use useEffect() to dispatch a load action on the initial page load.
+  - [x] This will need to use thunk as it will be asynchronous
+- [x] When adding/removing/updating items in the cart, the action/reducer will need to update the server.
+- [ ] Perform the appropriate post, put, or delete action via API call (using thunk in an async action) on each of these actions.
 
 #### `.env` requirements (where applicable)
 

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../store/cart-reducer';
-import { decrement } from '../store/products-reducer';
+import { decrementPut } from '../store/products-reducer';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 // import Link from '@material-ui/core/Link';
@@ -11,16 +11,15 @@ import CardContent from '@material-ui/core/CardContent';
 // import Button from '@material-ui/core/Button';
 // import { Portal } from '@material-ui/core';
 
-const mapDispatchToProps = { addItem, decrement };
+const mapDispatchToProps = { addItem, decrementPut };
 
 function Products(props) {
-  console.log('Props on Products:', props.products);
+  console.log('Props on Products:', props.state);
   const selectedProduct = (name) => {
     props.addItem(name);
-    props.decrement(name);
+    props.decrementPut(name);
+    // console.log('Props.state on products:', props.state);
   }
-
-  useEffect(() => console.log('Props on Products:', props), [props]);
 
   // Use to further style the cards: https://material-ui.com/components/cards/#simple-card
   return (
@@ -53,8 +52,9 @@ function Products(props) {
 }
 
 const mapStateToProps = (state) => ({
+  state,
+  products: state.products,
   activeCategory: state.categories.active,
-  products: state.products
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Products);
