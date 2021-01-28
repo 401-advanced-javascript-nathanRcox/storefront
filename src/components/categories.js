@@ -5,11 +5,11 @@ import Link from '@material-ui/core/Link';
 
 import { connect } from 'react-redux';
 import { categorySelection } from '../store/categories-reducer';
+// import { get } from '../store/API-reducer';
 
 const mapDispatchToProps = { categorySelection };
 
 function SelectCategory(props) {
-  console.log('Props on Categories:', props);
 
   const selectedCategory = (name) => {
     props.categorySelection(name);
